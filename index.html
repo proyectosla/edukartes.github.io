@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdukArtes - Bienestar Integral y Desarrollo Humano</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --verde-oscuro: #2d5016;
+            --verde-claro: #7ab649;
+            --naranja: #f39c12;
+            --gris-claro: #f5f5f5;
+            --gris-oscuro: #333;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gris-oscuro);
+            background-color: var(--blanco);
+        }
+
+        /* NAVEGACIÓN */
+        nav {
+            background-color: var(--verde-oscuro);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-nav {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--naranja);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--blanco);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--naranja);
+        }
+
+        /* SECCIÓN HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde-claro) 100%);
+            color: var(--blanco);
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+        }
+
+        .hero .logo-main {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 2rem;
+            object-fit: contain;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--naranja);
+            color: var(--blanco);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        /* SECCIONES */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: var(--verde-oscuro);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        section h3 {
+            color: var(--verde-claro);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* QUIÉNES SOMOS */
+        #quienes-somos {
+            background-color: var(--gris-claro);
+        }
+
+        .info-box {
+            background-color: var(--blanco);
+            padding: 2rem;
+            border-left: 5px solid var(--naranja);
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-box h3 {
+            color: var(--naranja);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-box p {
+            line-height: 1.8;
+            color: var(--gris-oscuro);
+        }
+
+        /* SERVICIOS */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .servicio-card {
+            background-color: var(--blanco);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--naranja);
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .servicio-card h3 {
+            color: var(--verde-oscuro);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .servicio-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* CONTACTO */
+        #contacto {
+            background-color: var(--gris-claro);
+            text-align: center;
+        }
+
+        .contacto-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contacto-item {
+            background-color: var(--blanco);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contacto-item h3 {
+            color: var(--naranja);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contacto-item p {
+            color: var(--gris-oscuro);
+            margin-bottom: 1rem;
+        }
+
+        .contacto-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-contacto {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background-color: var(--verde-claro);
+            color: var(--blanco);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-contacto:hover {
+            background-color: var(--verde-oscuro);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--verde-oscuro);
+            color: var(--blanco);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.95rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .location {
+            color: var(--naranja);
+            font-weight: 500;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contacto-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ANCLA */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <div class="nav-container">
+            <a href="#inicio" class="logo-nav">EdukArtes</a>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+        <img src="assets/logo.png" alt="EdukArtes Logo" class="logo-main">
+        <h1>EdukArtes</h1>
+        <p>Reconectar el ser para transformar el hacer</p>
+        <p style="font-size: 1rem; font-style: italic; color: rgba(255, 255, 255, 0.9);">Bienestar Integral y Desarrollo Humano</p>
+        <a href="#servicios" class="btn-primary">Conoce nuestros servicios</a>
+    </section>
+
+    <!-- QUIÉNES SOMOS -->
+    <section id="quienes-somos">
+        <h2>¿Quiénes Somos?</h2>
+        
+        <div class="info-box">
+            <h3>EdukArtes</h3>
+            <p>EdukArtes es el programa de bienestar integral de la Fundación Manitas Unidas enfocado en transformar emociones en propósito.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Nuestra Misión</h3>
+            <p>Acompañar a personas, instituciones educativas y empresas a reconectar con su ser interior mediante metodologías vivenciales, prácticas y sin estigmas, mitigando el desgaste emocional y fomentando entornos saludables.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Nuestra Visión</h3>
+            <p>Ser el referente en salud mental y desarrollo humano donde cada espacio se convierte en un territorio seguro de aprendizaje, resistencia emocional y crecimiento sostenible.</p>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <h3>Gimnasio de Salud Mental (Programa Insignia)</h3>
+                <p>Entrenas tu cuerpo, pero... ¿quién entrena tus emociones? El bienestar se construye entrenando todos los días. Una experiencia inmersiva donde fortalecemos autoconocimiento, gestión del estrés y resistencia emocional.</p>
+            </div>
+
+            <div class="servicio-card">
+                <h3>Talleres Experienciales de Bienestar Emocional</h3>
+                <p>Olvídate de las charlas aburridas. Espacios donde el arte, la reflexión y la lúdica se encuentran. Diseñamos experiencias adaptadas a tu grupo garantizando aprendizaje significativo y herramientas prácticas.</p>
+            </div>
+
+            <div class="servicio-card">
+                <h3>EdukArtes Escolar (Educación Transformadora)</h3>
+                <p>No podemos exigir rendimiento académico a mentes emocionalmente agotadas. Intervenimos en instituciones educativas para sanar y fortalecer la convivencia desde el cuidado emocional.</p>
+            </div>
+
+            <div class="servicio-card">
+                <h3>EdukArtes Corporativo (Bienestar para Empresas)</h3>
+                <p>Un equipo desconectado no puede ser productivo. Diseñamos intervenciones que van a la raíz del clima organizacional: liderazgo consciente, comunicación asertiva y cohesión de equipos.</p>
+            </div>
+
+            <div class="servicio-card">
+                <h3>Conferencias y Charlas Inspiracionales</h3>
+                <p>Experiencias dinámicas, empáticas y de alto impacto emocional para movilizar audiencias. Hablamos de salud mental sin estigmas, introduciendo desarrollo humano de manera cercana y reflexiva.</p>
+            </div>
+
+            <div class="servicio-card">
+                <h3>Asesorías y Acompañamiento Personalizado</h3>
+                <p>A veces, el mejor proyecto eres tú mismo. Guiamos paso a paso con sesiones individuales o grupales para trazar un mapa de acción claro, recuperar equilibrio y avanzar con propósito.</p>
+            </div>
+
+            <div class="servicio-card">
+                <h3>Kits Pedagógicos y Materiales de Apoyo</h3>
+                <p>Llevamos bienestar a tus manos. Cuadernos de Retos, Maletín de Primeros Auxilios Psicológicos y más. Herramientas tangibles que aseguran transformación sostenible en el tiempo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        
+        <div class="contacto-info">
+            <div class="contacto-item">
+                <h3>Ubicación</h3>
+                <p class="location">Montería, Córdoba, Colombia</p>
+            </div>
+
+            <div class="contacto-item">
+                <h3>WhatsApp</h3>
+                <p>Escribenos directamente</p>
+                <a href="https://wa.me/573219242244?text=Hola%20EdukArtes%2C%20quisiera%20información%20sobre%20sus%20servicios" class="btn-contacto" target="_blank">Abrir WhatsApp</a>
+            </div>
+
+            <div class="contacto-item">
+                <h3>Instagram</h3>
+                <p>Síguenos en nuestras redes</p>
+                <a href="https://www.instagram.com/eduk_artes/" class="btn-contacto" target="_blank">@eduk_artes</a>
+            </div>
+
+            <div class="contacto-item">
+                <h3>Tienda Virtual</h3>
+                <p>Conoce nuestros productos</p>
+                <a href="https://fundacion-manitas-unidas.cercia.co/" class="btn-contacto" target="_blank">Visitar Tienda</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Todos los derechos reservados © EdukArtes Colombia 2026</p>
+        <p>By Orbita Integración de Servicios Gerenciales</p>
+    </footer>
+
+</body>
+</html>
