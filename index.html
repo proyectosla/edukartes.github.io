@@ -71,13 +71,12 @@
             color: var(--naranja);
         }
 
-        /* SECCIÓN HERO */
+        /* SECCIÓN HERO (Fondo blanco, más compacta y logo grande) */
         .hero {
-            background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde-claro) 100%);
-            color: var(--blanco);
-            padding: 6rem 2rem;
+            background-color: var(--blanco);
+            color: var(--gris-oscuro);
+            padding: 3rem 2rem 2.5rem 2rem; /* Espaciado reducido */
             text-align: center;
-            min-height: 500px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -85,21 +84,23 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
             font-weight: 700;
+            color: var(--verde-oscuro);
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
             max-width: 700px;
+            color: var(--gris-oscuro);
         }
 
         .hero .logo-main {
-            width: 150px;
-            height: 150px;
-            margin-bottom: 2rem;
+            width: 220px; /* Logo más grande */
+            height: auto;
+            margin-bottom: 1.5rem;
             object-fit: contain;
         }
 
@@ -114,6 +115,7 @@
             transition: background-color 0.3s, transform 0.2s;
             border: none;
             cursor: pointer;
+            margin-top: 1rem;
         }
 
         .btn-primary:hover {
@@ -230,13 +232,6 @@
             margin-bottom: 1rem;
         }
 
-        .contacto-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
         .btn-contacto {
             display: inline-block;
             padding: 0.7rem 1.5rem;
@@ -280,11 +275,15 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .hero p {
                 font-size: 1.1rem;
+            }
+
+            .hero .logo-main {
+                width: 170px;
             }
 
             section h2 {
@@ -299,11 +298,7 @@
                 padding: 2rem 1rem;
             }
 
-            .servicios-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contacto-info {
+            .servicios-grid, .contacto-info {
                 grid-template-columns: 1fr;
             }
         }
@@ -331,10 +326,10 @@
 
     <!-- HERO -->
     <section id="inicio" class="hero">
-       <img src="logo.png" alt="EdukArtes Logo" class="logo-main">
+        <img src="logo.png" alt="EdukArtes Logo" class="logo-main">
         <h1>EdukArtes</h1>
         <p>Reconectar el ser para transformar el hacer</p>
-        <p style="font-size: 1rem; font-style: italic; color: rgba(255, 255, 255, 0.9);">Bienestar Integral y Desarrollo Humano</p>
+        <p style="font-size: 1rem; font-style: italic; color: #555;">Bienestar Integral y Desarrollo Humano</p>
         <a href="#servicios" class="btn-primary">Conoce nuestros servicios</a>
     </section>
 
@@ -412,7 +407,7 @@
 
             <div class="contacto-item">
                 <h3>WhatsApp</h3>
-                <p>Escribenos directamente</p>
+                <p>Escríbenos directamente</p>
                 <a href="https://wa.me/573172791154?text=Hola%20EdukArtes%2C%20quisiera%20información%20sobre%20sus%20servicios" class="btn-contacto" target="_blank">Abrir WhatsApp</a>
             </div>
 
